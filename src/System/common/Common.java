@@ -3,23 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package common;
+package System.common;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.security.InvalidAlgorithmParameterException;
 import java.security.Key;
-import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
-import javax.management.openmbean.InvalidKeyException;
 import org.apache.commons.codec.binary.Base64;
 
 /**
@@ -53,7 +47,7 @@ public class Common {
         }
     }
 
-    public static void terminateProcess(String port) {
+    public static void terminateProcess(String port, boolean wait) {
 
         String[] args = {"netstat", "-a", "-n", "-o"};
         Object[] ret = startProcess(args);
@@ -101,6 +95,10 @@ public class Common {
                             }
                         }).start();
 
+                        if (wait) {
+                            System.out.println("taskkill Process'i bekleniyor.");
+                            ret[2].wait();
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -160,7 +158,7 @@ public class Common {
     private static byte[] ivBytes = "metasoft_yazilim".getBytes(); // Anahtar 16 Byte olmak zorunda
     private static final String algoritma = "AES";
 
-    private static String encryptString_V2(String text) {
+    public static String encryptString_V2(String text) {
         if (text != null && !text.equals("") && !text.equals("0")) {
             try {
                 /**
@@ -184,7 +182,7 @@ public class Common {
         return null;
     }
 
-    private static String decryptString_V2(String encryptedText) {
+    public static String decryptString_V2(String encryptedText) {
         String decryptedValue = null;
         Boolean tryOldDecryptedFunction = false;
         try {
@@ -262,5 +260,4 @@ public class Common {
         String charStr = Character.toString(prmChar);
         return charStr.matches("[a-zA-Z0-9]");
     }
-
 }

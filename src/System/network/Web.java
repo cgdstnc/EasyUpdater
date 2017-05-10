@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package network;
+package System.network;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -47,6 +47,7 @@ public class Web {
             while ((count = in.read(data, 0, 1024)) != -1) {
                 fout.write(data, 0, count);
             }
+            
         } finally {
             if (in != null) {
                 try {

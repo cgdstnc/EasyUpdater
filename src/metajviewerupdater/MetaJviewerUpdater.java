@@ -5,12 +5,8 @@
  */
 package metajviewerupdater;
 
-import common.Common;
-import common.Updater;
-import java.io.File;
-import net.lingala.zip4j.core.ZipFile;
-import net.lingala.zip4j.model.FileHeader;
-import view.VersionDialog;
+import System.common.Updater;
+import View.VersionDialog;
 
 /**
  *
@@ -18,17 +14,27 @@ import view.VersionDialog;
  */
 public class MetaJviewerUpdater {
 
-    public static void checkAndShowDialog() {
-        VersionDialog dialog = new VersionDialog();
-        if (Updater.newerVersionAvailable()) {
+    public static void checkAndShowDialog(String proje, Integer portBindingToForceKillProcess) {
+        if (Updater.newerVersionAvailable(Updater.getCurrentVersions(proje))) {
+            VersionDialog dialog = new VersionDialog(proje, portBindingToForceKillProcess);
             dialog.setVisible(true);
         }
     }
 
-    
     public static void main(String[] args) throws Exception {
-        //checkAndShowDialog();
-        System.out.println(Common.getTxtRecord("idealupdatemtjv.metasoft.teknopark").replaceAll("\\\\",""));
+        String proje = null;
+        Integer portToKill = null;
+
+        try {
+            proje = args[0];
+            portToKill = (Integer.valueOf(args[1]) == null) ? null : Integer.valueOf(args[1]);
+        } catch (Exception e) {
+        }
+
+//        //debug 
+//        proje = "mjv";
+//        portToKill = 1809;
+        checkAndShowDialog(proje, portToKill);
     }
-    
+
 }

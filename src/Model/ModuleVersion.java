@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package Model;
 
 /**
  *
  * @author Administrator
  */
-public class PacsViewerVersion {
+public class ModuleVersion {
 
     private Integer nightlyBuild;
     private Integer stableVersion;
 
-    public PacsViewerVersion() {
+    public ModuleVersion() {
     }
 
     public Integer getNightlyBuild() {
