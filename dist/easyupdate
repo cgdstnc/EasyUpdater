@@ -1,0 +1,6 @@
+{"updateServerIp":"http://192.168.12.132",
+"updateServerPort":"1893",
+"updateApi":"/update",
+"versionCheckApi":"/lastVersion",
+"lastVersion":11.0,
+"reciveExperimentalUpdates":false}

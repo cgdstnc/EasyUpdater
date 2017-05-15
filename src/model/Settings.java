@@ -3,32 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package Model;
 
 /**
  *
  * @author Administrator
  */
 public class Settings {
+
     private String updateServerIp;
     private String updateServerPort;
     private String updateApi;
     private String versionCheckApi;
     private Double lastVersion;
     private boolean reciveExperimentalUpdates;
-    private int metaJviewerSingleInstancePort;
     
+
     public Settings() {
     }
 
-    public Settings(String updateServerIp, String updateServerPort, String updateApi, String versionCheckApi, Double lastVersion, boolean reciveExperimentalUpdates, int metaJviewerSingleInstancePort) {
+    public Settings(String updateServerIp, String updateServerPort, String updateApi, String versionCheckApi, Double lastVersion, boolean reciveExperimentalUpdates) {
         this.updateServerIp = updateServerIp;
         this.updateServerPort = updateServerPort;
         this.updateApi = updateApi;
         this.versionCheckApi = versionCheckApi;
         this.lastVersion = lastVersion;
         this.reciveExperimentalUpdates = reciveExperimentalUpdates;
-        this.metaJviewerSingleInstancePort = metaJviewerSingleInstancePort;
     }
 
     public String getUpdateServerIp() {
@@ -79,12 +79,5 @@ public class Settings {
         this.reciveExperimentalUpdates = reciveExperimentalUpdates;
     }
 
-    public int getMetaJviewerSingleInstancePort() {
-        return metaJviewerSingleInstancePort;
-    }
 
-    public void setMetaJviewerSingleInstancePort(int metaJviewerSingleInstancePort) {
-        this.metaJviewerSingleInstancePort = metaJviewerSingleInstancePort;
-    }
-    
 }

@@ -2,16 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Administrator/Documents/NetBeansProjects/EasyUpdater/src/view/VersionDialog.java</file>
-            <file>file:/C:/Users/Administrator/Documents/NetBeansProjects/EasyUpdater/src/model/PacsViewerVersion.java</file>
-            <file>file:/C:/Users/Administrator/Documents/NetBeansProjects/EasyUpdater/src/metajviewerupdater/MetaJviewerUpdater.java</file>
-            <file>file:/C:/Users/Administrator/Documents/NetBeansProjects/EasyUpdater/src/model/Settings.java</file>
-            <file>file:/C:/Users/Administrator/Documents/NetBeansProjects/EasyUpdater/src/common/Updater.java</file>
-            <file>file:/C:/Users/Administrator/Documents/NetBeansProjects/EasyUpdater/src/network/Web.java</file>
-            <file>file:/C:/Users/Administrator/Documents/NetBeansProjects/EasyUpdater/src/model/ModuleVersion.java</file>
-            <file>file:/C:/Users/Administrator/Documents/NetBeansProjects/EasyUpdater/src/common/Common.java</file>
-            <file>file:/C:/Users/Administrator/Documents/NetBeansProjects/EasyUpdater/src/network/apiEnum.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

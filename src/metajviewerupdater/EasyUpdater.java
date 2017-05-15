@@ -12,7 +12,7 @@ import View.VersionDialog;
  *
  * @author Administrator
  */
-public class MetaJviewerUpdater {
+public class EasyUpdater {
 
     public static void checkAndShowDialog(String proje, Integer portBindingToForceKillProcess) {
         if (Updater.newerVersionAvailable(Updater.getCurrentVersions(proje))) {
@@ -28,13 +28,17 @@ public class MetaJviewerUpdater {
         try {
             proje = args[0];
             portToKill = (Integer.valueOf(args[1]) == null) ? null : Integer.valueOf(args[1]);
+            checkAndShowDialog(proje, portToKill);
+            
         } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Ornek kullanim java -jar EasyUpdater.jar {projeAdi} {(int)projeninTuttuguPortYoksaKullanilmayan4-5hanelibirseysalla}");
         }
 
 //        //debug 
 //        proje = "mjv";
 //        portToKill = 1809;
-        checkAndShowDialog(proje, portToKill);
+//checkAndShowDialog(proje, portToKill);
     }
 
 }
