@@ -21,6 +21,16 @@ public class EasyUpdater {
         }
     }
 
+    public static void forceUpdate(String proje, Integer portBindingToForceKillProcess) {
+        if (Updater.newerVersionAvailable(Updater.getCurrentVersions(proje))) {
+            try {
+                Updater.update(proje, portBindingToForceKillProcess);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public static void main(String[] args) throws Exception {
         String proje = null;
         Integer portToKill = null;
@@ -28,8 +38,8 @@ public class EasyUpdater {
         try {
             proje = args[0];
             portToKill = (Integer.valueOf(args[1]) == null) ? null : Integer.valueOf(args[1]);
-            checkAndShowDialog(proje, portToKill);
-            
+            //checkAndShowDialog(proje, portToKill);
+            Updater.update(proje, portToKill);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Ornek kullanim java -jar EasyUpdater.jar {projeAdi} {(int)projeninTuttuguPortYoksaKullanilmayan4-5hanelibirseysalla}");

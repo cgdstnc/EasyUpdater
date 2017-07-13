@@ -164,6 +164,10 @@ public class VersionDialog extends javax.swing.JFrame {
     }//GEN-LAST:event_jbCancelActionPerformed
 
     private void jbAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAcceptActionPerformed
+        update();
+    }//GEN-LAST:event_jbAcceptActionPerformed
+
+    public void update() {
         dontExit = true;
         try {
             Updater.update(project, portBindingToForceKillProcess);
@@ -173,7 +177,7 @@ public class VersionDialog extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, ex.getLocalizedMessage(), "Hata", JOptionPane.PLAIN_MESSAGE);
             System.exit(1);
         }
-    }//GEN-LAST:event_jbAcceptActionPerformed
+    }
 
     private void decorate() {
         try {
